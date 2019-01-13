@@ -1,47 +1,62 @@
 <template>
     <div id='loading'>
-        <div id='picture'>
-                <div id='center' v-show="show1">
+        <div id='picture' :style=boxStyle>
+            <transition name ="fade">
+                <div id='center' v-show="show1" :style=centerStyle>
                     <div class="beforeHexagon" :style=beforeHexagonStyle></div>
                     <div class="Hexagon" :style=hexagonStyle></div>
                     <div class="afterHexagon" :style=afterHexagonStyle></div>
                 </div>
+            </transition>
+
+            <transition name ="fade">
+                <div id='top-left' v-show="show2" :style=topLeftStyle>
+                    <div class="beforeHexagon" :style=beforeHexagonStyle></div>
+                    <div class="Hexagon" :style=hexagonStyle></div>
+                    <div class="afterHexagon" :style=afterHexagonStyle></div>
+                </div>
+            </transition>
+
+            <transition name ="fade">
+                <div id='top-right' v-show="show3" :style=topRightStyle>
+                    <div class="beforeHexagon" :style=beforeHexagonStyle></div>
+                    <div class="Hexagon" :style=hexagonStyle></div>
+                    <div class="afterHexagon" :style=afterHexagonStyle></div>
+                </div>
+            </transition>
+
+            <transition name ="fade">
+                <div id='right' v-show="show4" :style=rightStyle>
+                    <div class="beforeHexagon" :style=beforeHexagonStyle></div>
+                    <div class="Hexagon" :style=hexagonStyle></div>
+                    <div class="afterHexagon" :style=afterHexagonStyle></div>
+                </div>
+            </transition>
+
+            <transition name ="fade">
+                <div id='bottom-right' v-show="show5" :style=bottomRightStyle>
+                    <div class="beforeHexagon" :style=beforeHexagonStyle></div>
+                    <div class="Hexagon" :style=hexagonStyle></div>
+                    <div class="afterHexagon" :style=afterHexagonStyle></div>
+                </div>
+            </transition>
+
+            <transition name ="fade">
+                <div id='bottom-left' v-show="show6" :style=bottomLeftStyle>
+                    <div class="beforeHexagon" :style=beforeHexagonStyle></div>
+                    <div class="Hexagon" :style=hexagonStyle></div>
+                    <div class="afterHexagon" :style=afterHexagonStyle></div>
+                </div>
+            </transition>
+
+            <transition name ="fade">
+                <div id='left' v-show="show7" :style=leftStyle>
+                    <div class="beforeHexagon" :style=beforeHexagonStyle></div>
+                    <div class="Hexagon" :style=hexagonStyle></div>
+                    <div class="afterHexagon" :style=afterHexagonStyle></div>
+                </div>
+            </transition>
             
-            <div id='top-left' v-show="show2">
-                    <div class="beforeHexagon" :style=beforeHexagonStyle></div>
-                    <div class="Hexagon" :style=hexagonStyle></div>
-                    <div class="afterHexagon" :style=afterHexagonStyle></div>
-                </div>
-
-            <div id='top-right' v-show="show3">
-                    <div class="beforeHexagon" :style=beforeHexagonStyle></div>
-                    <div class="Hexagon" :style=hexagonStyle></div>
-                    <div class="afterHexagon" :style=afterHexagonStyle></div>
-                </div>
-
-            <div id='right' v-show="show4">
-                    <div class="beforeHexagon" :style=beforeHexagonStyle></div>
-                    <div class="Hexagon" :style=hexagonStyle></div>
-                    <div class="afterHexagon" :style=afterHexagonStyle></div>
-                </div>
-
-            <div id='bottom-right' v-show="show5">
-                    <div class="beforeHexagon" :style=beforeHexagonStyle></div>
-                    <div class="Hexagon" :style=hexagonStyle></div>
-                    <div class="afterHexagon" :style=afterHexagonStyle></div>
-                </div>
-
-            <div id='bottom-left' v-show="show6">
-                    <div class="beforeHexagon" :style=beforeHexagonStyle></div>
-                    <div class="Hexagon" :style=hexagonStyle></div>
-                    <div class="afterHexagon" :style=afterHexagonStyle></div>
-                </div>
-
-            <div id='left' v-show="show7">
-                    <div class="beforeHexagon" :style=beforeHexagonStyle></div>
-                    <div class="Hexagon" :style=hexagonStyle></div>
-                    <div class="afterHexagon" :style=afterHexagonStyle></div>
-            </div>
         </div>
     </div>
 </template>
@@ -51,43 +66,11 @@ export default {
     name:'loading',
     props:{
         color:String,
+        radius:Number,
+        gap:Number,
     },
     data: function(){
         return{
-            hexagon:[
-                {
-                    show:true,
-                    key:1
-                },
-                {
-                    show:true,
-                    key:2
-                },
-                {
-                    show:true,
-                    key:2
-                },
-                {
-                    show:true,
-                    key:3
-                },
-                {
-                    show:true,
-                    key:4
-                },
-                {
-                    show:true,
-                    key:5
-                },
-                {
-                    show:true,
-                    key:6
-                },
-                {
-                    show:true,
-                    key:7
-                },
-            ]
             show1:true,
             show2:true,
             show3:true,
@@ -95,28 +78,98 @@ export default {
             show5:true,
             show6:true,
             show7:true,
-            radius: '60px',
-            gap: '10px'
         }
     },
     computed:{
+        boxStyle:function(){
+            return{
+                width:`${3*Math.sqrt(3)*this.radius+2*this.gap}px`,
+                height:`${5*this.radius+2*this.gap}px`,
+                position:'relative',
+                marginLeft:'500px',
+                marginTop:'100px'
+            }
+        },
+
+        centerStyle:function(){
+            return{
+                position:'abosolute',
+                width:`${(Math.sqrt(3))*this.radius}px`,
+                top:`${(2*this.radius)+1*this.gap}px`,
+                left:`${(this.radius*Math.sqrt(3))+1*this.gap}px`
+            }
+        },
+        topLeftStyle:function(){
+            return{
+                position:'absolute',
+                width:`${(Math.sqrt(3))*this.radius}px`,
+                top:`${this.radius/2}px`,
+                left:`${(Math.sqrt(3)*this.radius/2)+1*this.gap/2}px`
+            }
+        },
+        topRightStyle:function(){
+            return{
+                position:'absolute',
+                width:`${(Math.sqrt(3))*this.radius}px`,
+                top:`${this.radius/2}px`,
+                left:`${(((Math.sqrt(3)*3)*this.radius)/2)+3*this.gap/2}px`
+            }
+        },
+        rightStyle:function(){
+            return{
+                position:'absolute',
+                width:`${(Math.sqrt(3))*this.radius}px`,
+                top:`${(this.radius*2)+1*this.gap}px`,
+                right:'0px'
+            }
+        },
+        bottomRightStyle:function(){
+            return{
+                position:'absolute',
+                width:`${(Math.sqrt(3))*this.radius}px`,
+                top:`${(7*this.radius/2)+2*this.gap}px`,
+                left:`${(((Math.sqrt(3)*3)*this.radius)/2)+3*this.gap/2}px`
+            }
+        },
+        bottomLeftStyle:function(){
+            return{
+                position:'absolute',
+                width:`${(Math.sqrt(3))*this.radius}px`,
+                top:`${(7*this.radius/2)+2*this.gap}px`,
+                left:`${(Math.sqrt(3)*this.radius/2)+1*this.gap/2}px`
+            }
+        },
+        leftStyle:function(){
+            return{
+                position:'absolute',
+                width:`${(Math.sqrt(3))*this.radius}px`,
+                top:`${(this.radius*2)+1*this.gap}px`,
+                left:'0px'
+            }
+        },
+
         hexagonStyle:function(){
             return{
                 position: 'relative',
-	            width: '200px',
-	            height: '115px',
-                backgroundColor:this.color,
-                
+	            width: `${(Math.sqrt(3))*this.radius}px`,
+	            height: `${this.radius}px`,
+                backgroundColor:this.color,   
             }
         },
         beforeHexagonStyle:function(){
             return{
-                borderTopColor:this.color
+                borderTopColor:this.color,
+                borderWidth:`${this.radius*Math.sqrt(3)/2}px`,
+                borderTopWidth:`${this.radius/2}px`,
+                bottom:`-${(this.radius*Math.sqrt(3))/2+this.radius/2}px`
             }
         },
         afterHexagonStyle:function(){
             return{
-                borderBottomColor:this.color
+                borderBottomColor:this.color,
+                borderWidth:`${this.radius*Math.sqrt(3)/2}px`,
+                borderBottomWidth:`${this.radius/2}px`,
+                top:`-${(this.radius*Math.sqrt(3))/2+this.radius/2}px`
             }
         }
     },
@@ -143,7 +196,7 @@ export default {
                 setTimeout(() => {
                     this.show1=!this.show1;
                 }, 1200);
-            }, 1400);
+            }, 1400); 
     },
 }
     
@@ -163,66 +216,25 @@ export default {
 
 }
 
-#picture{
-    width:620px;
-    height:576px;
-    position:relative;
-    margin-left:1000px
-}
-#center{
-    position: absolute;
-    left:210px;
-    top:255px;  /* dev */
-}
-#top-left{
-    position: absolute;
-    top:62.5px;
-    left:100px;
-}
-#top-right{
-    position: absolute;
-    top:62.5px;
-    left:310px;
-}
-#right{
-    position: absolute;
-    top:255px;
-    left: 420px;
-}
-#bottom-right{
-    position: absolute;
-    bottom:0px;
-    left:320px;
-}
-#bottom-left{
-    position: absolute;
-    bottom:0px;
-    left:100px;
-}
-#left{
-    position: absolute;
-    top:255px;
-    left:1px;
-}
 .beforeHexagon{
 	content: "";
 	position: absolute;
 	display: block;
-	bottom: -157px;
-	width: 0;
-	height: 0;
-	border: 100px solid transparent;
-	border-top: 57px solid;
+	width: 0px;
+	height: 0px;
+    border-width:0px;
+	border-style: solid ;
+    border-color: transparent;
 }
 .afterHexagon{
 	content: "";
 	position: absolute;
 	display: block;
-	top: -157px;
-	width: 0;
-	height: 0;
-	border: 100px solid transparent;
-	border-bottom: 57px solid ;
+	width: 0px;
+	height: 0px;
+    border-width:0px;
+	border-style: solid ;
+    border-color: transparent;
 }
 
 </style>
