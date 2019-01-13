@@ -65,9 +65,18 @@
 export default {
     name:'loading',
     props:{
-        color:String,
-        radius:Number,
-        gap:Number,
+        color:{
+            type:String,
+            default: 'yellow'
+        },
+        radius:{
+            type:Number,
+            default: 100
+        },
+        gap:{
+            type:Number,
+            default: 10
+        }
     },
     data: function(){
         return{
@@ -238,3 +247,4 @@ export default {
 }
 
 </style>
+
