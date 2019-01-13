@@ -1,55 +1,47 @@
 <template>
     <div id='loading'>
         <div id='picture'>
-            <transition name ="fade">
                 <div id='center' v-show="show1">
                     <div class="beforeHexagon" :style=beforeHexagonStyle></div>
                     <div class="Hexagon" :style=hexagonStyle></div>
                     <div class="afterHexagon" :style=afterHexagonStyle></div>
                 </div>
-            </transition>
-            <transition name ="fade">
+            
             <div id='top-left' v-show="show2">
                     <div class="beforeHexagon" :style=beforeHexagonStyle></div>
                     <div class="Hexagon" :style=hexagonStyle></div>
                     <div class="afterHexagon" :style=afterHexagonStyle></div>
                 </div>
-            </transition>
-            <transition name ="fade">
+
             <div id='top-right' v-show="show3">
                     <div class="beforeHexagon" :style=beforeHexagonStyle></div>
                     <div class="Hexagon" :style=hexagonStyle></div>
                     <div class="afterHexagon" :style=afterHexagonStyle></div>
                 </div>
-            </transition>
-            <transition name ="fade">
+
             <div id='right' v-show="show4">
                     <div class="beforeHexagon" :style=beforeHexagonStyle></div>
                     <div class="Hexagon" :style=hexagonStyle></div>
                     <div class="afterHexagon" :style=afterHexagonStyle></div>
                 </div>
-            </transition>
-            <transition name ="fade">
+
             <div id='bottom-right' v-show="show5">
                     <div class="beforeHexagon" :style=beforeHexagonStyle></div>
                     <div class="Hexagon" :style=hexagonStyle></div>
                     <div class="afterHexagon" :style=afterHexagonStyle></div>
                 </div>
-            </transition>
-            <transition name ="fade">
+
             <div id='bottom-left' v-show="show6">
                     <div class="beforeHexagon" :style=beforeHexagonStyle></div>
                     <div class="Hexagon" :style=hexagonStyle></div>
                     <div class="afterHexagon" :style=afterHexagonStyle></div>
                 </div>
-            </transition>
-            <transition name ="fade">
+
             <div id='left' v-show="show7">
                     <div class="beforeHexagon" :style=beforeHexagonStyle></div>
                     <div class="Hexagon" :style=hexagonStyle></div>
                     <div class="afterHexagon" :style=afterHexagonStyle></div>
             </div>
-            </transition>
         </div>
     </div>
 </template>
@@ -62,6 +54,40 @@ export default {
     },
     data: function(){
         return{
+            hexagon:[
+                {
+                    show:true,
+                    key:1
+                },
+                {
+                    show:true,
+                    key:2
+                },
+                {
+                    show:true,
+                    key:2
+                },
+                {
+                    show:true,
+                    key:3
+                },
+                {
+                    show:true,
+                    key:4
+                },
+                {
+                    show:true,
+                    key:5
+                },
+                {
+                    show:true,
+                    key:6
+                },
+                {
+                    show:true,
+                    key:7
+                },
+            ]
             show1:true,
             show2:true,
             show3:true,
