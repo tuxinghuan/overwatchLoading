@@ -33,8 +33,10 @@ app.vue
 ![img](https://github.com/tuxinghuan/overwatchLoading/blob/master/demo/demo1.gif)
 
 ## api
->* color:六边形颜色(例如<owloading color="red" />渲染出来的六边形就是红色)
->* radius:六边形半径(例如<owloading radius="10" />渲染出来的六边形半径就是10px)
+通过props传入子组件
+
+>* color:六边形颜色(例如&lt;owloading color="red" /&gt;渲染出来的六边形就是红色)
+>* radius:六边形半径(例如&lt;owloading radius="10" /gt;渲染出来的六边形半径就是10px)
 
 效果：
 
