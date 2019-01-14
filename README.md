@@ -30,3 +30,12 @@ app.vue
 ```
 
 ## demo
+![img](https://github.com/tuxinghuan/overwatchLoading/blob/master/demo/demo1.gif)
+
+## api
+>* color:六边形颜色(例如<owloading color="red" />渲染出来的六边形就是红色)
+>* radius:六边形半径(例如<owloading radius="10" />渲染出来的六边形半径就是10px)
+
+效果：
+
+![img](https://github.com/tuxinghuan/overwatchLoading/blob/master/demo/demo2.gif)
