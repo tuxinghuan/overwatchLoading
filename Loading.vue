@@ -65,17 +65,19 @@
 export default {
     name:'loading',
     props:{
-        color:{
+        Color:{
             type:String,
             default: 'yellow'
         },
-        radius:{
+        Radius:{
             type:Number,
             default: 100
         },
     },
     data: function(){
         return{
+            color:this.Color,
+            radius:this.Radius,
             show1:false,
             show2:false,
             show3:false,
@@ -95,6 +97,8 @@ export default {
                 width:`${3*Math.sqrt(3)*this.radius+2*this.gap}px`,
                 height:`${5*this.radius+2*this.gap}px`,
                 position:'relative',
+                marginLeft: '40px',
+                marginTop: '20px'
             }
         },
 
