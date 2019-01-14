@@ -73,30 +73,28 @@ export default {
             type:Number,
             default: 100
         },
-        gap:{
-            type:Number,
-            default: 10
-        }
     },
     data: function(){
         return{
-            show1:true,
-            show2:true,
-            show3:true,
-            show4:true,
-            show5:true,
-            show6:true,
-            show7:true,
+            show1:false,
+            show2:false,
+            show3:false,
+            show4:false,
+            show5:false,
+            show6:false,
+            show7:false,
         }
     },
     computed:{
+        gap:function(){
+            let gap=this.radius/5
+            return gap
+        },
         boxStyle:function(){
             return{
                 width:`${3*Math.sqrt(3)*this.radius+2*this.gap}px`,
                 height:`${5*this.radius+2*this.gap}px`,
                 position:'relative',
-                marginLeft:'500px',
-                marginTop:'100px'
             }
         },
 
@@ -182,7 +180,7 @@ export default {
             }
         }
     },
-    mounted:function(){
+    created:function(){
             setInterval(() => {
                 setTimeout(() => {
                     this.show2=!this.show2;
