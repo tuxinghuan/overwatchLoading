@@ -42,3 +42,6 @@ app.vue
 
 ![img](https://github.com/tuxinghuan/overwatchLoading/blob/master/demo/demo2.gif)
 
+## 最后
+有任何问题欢迎提issue或者PR
+
