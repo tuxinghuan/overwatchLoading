@@ -1,11 +1,15 @@
 {
   "name": "vue-overwatch-loading",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "vue-component",
   "author": "tuxinghuan <m18817296539@163.com>",
   "license": "MIT",
   "main" :"dist/vue-overwatch-loading.js",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuxinghuan/overwatchLoading"
+  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
@@ -29,6 +33,6 @@
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1"
+    "webpack-dev-server": ">=3.1.11"
   }
 }
