@@ -87,15 +87,14 @@ export default {
         }
     },
     computed:{
-        gap:function(){
-            let gap=this.radius/5
-            return gap
+        gap: function() {
+            return this.radius/5
         },
-        boxStyle:function(){
-            return{
-                width:`${3*Math.sqrt(3)*this.radius+2*this.gap}px`,
-                height:`${5*this.radius+2*this.gap}px`,
-                position:'relative',
+        boxStyle: function() {
+            return {
+                width: `${3*Math.sqrt(3)*this.radius+2*this.gap}px`,
+                height: `${5*this.radius+2*this.gap}px`,
+                position: 'relative',
                 marginLeft: '40px',
                 marginTop: '20px'
             }
@@ -168,7 +167,7 @@ export default {
                 borderTopColor:this.color,
                 borderWidth:`${this.radius*Math.sqrt(3)/2}px`,
                 borderTopWidth:`${this.radius/2}px`,
-                bottom:`-${(this.radius*Math.sqrt(3))/2+this.radius/2}px`
+                bottom:`-${(this.radius*Math.sqrt(3))/2+this.radius/2 - 1}px`
             }
         },
         afterHexagonStyle:function(){
@@ -176,7 +175,7 @@ export default {
                 borderBottomColor:this.color,
                 borderWidth:`${this.radius*Math.sqrt(3)/2}px`,
                 borderBottomWidth:`${this.radius/2}px`,
-                top:`-${(this.radius*Math.sqrt(3))/2+this.radius/2}px`
+                top:`-${(this.radius*Math.sqrt(3))/2+this.radius/2 - 1}px`
             }
         }
     },
