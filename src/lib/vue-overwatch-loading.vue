@@ -95,8 +95,6 @@ export default {
                 width: `${3*Math.sqrt(3)*this.radius+2*this.gap}px`,
                 height: `${5*this.radius+2*this.gap}px`,
                 position: 'relative',
-                marginLeft: '40px',
-                marginTop: '20px'
             }
         },
 
